@@ -124,6 +124,7 @@ export default function DoctorsHomePage() {
       if (!res.ok) throw new Error("Failed to submit review");
       setNewReview({ rating: 0, comment: "" });
       fetchDoctorReviews(selectedDoctor._id);
+       fetchDoctors();
       showToast("Review submitted successfully!");
     } catch (err) {
       console.error(err);
